@@ -3,5 +3,6 @@ module QLTV {
     requires javafx.controls;
     requires javafx.graphics;
     requires java.datatransfer;
-    opens sample;
+    requires java.sql;
+    opens gui;
 }
