@@ -24,7 +24,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("userLogin.fxml"));
         Scene scene = new Scene(createVBoxLayout(), 300, 200);
         primaryStage.setTitle("Đăng Nhập");
         primaryStage.setScene(scene);
@@ -103,6 +103,7 @@ public class Main extends Application {
                 System.out.println(resultSet.getString("TENTK"));
                 System.out.println(resultSet.getString("MATKHAU"));
                 System.out.println(resultSet.getString("MACHUCVU"));
+                System.out.println("-----------------------");
 
                 //result.add(usersDTO);
             }
