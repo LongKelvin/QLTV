@@ -7,29 +7,34 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class LoginDal {
     private final LoginAccountDto result = new LoginAccountDto();
-    private final Connection connection;
+    private Connection connection;
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
+    DBUtils dbUltils = new DBUtils();
 
 
     public LoginDal() {
-        DBUtils dbUltils = new DBUtils();
+        dbUltils = new DBUtils();
         connection = dbUltils.getConnection();
     }
 
-    public String GetAccountType(String username) {
-        String accountType = "";
-        String query = "select MACHUCVU from TAIKHOANNV where TENTK='" + username + "'";
+    public String[] GetAccountType(String username) {
+
+        connection = dbUltils.getConnection();
+        String[] accountType = new String[2];
+        String query = "select MACHUCVU, MANV from TAIKHOANNV where TENTK='" + username + "'";
 
         try {
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
 
-                accountType = (resultSet.getString("MACHUCVU"));
+                accountType[0] = (resultSet.getString("MACHUCVU"));
+                accountType[1] = (resultSet.getString("MANV"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,6 +57,7 @@ public class LoginDal {
         String query = "SELECT TENTK, MATKHAU FROM TAIKHOANNV WHERE TENTK='" + username + "' and MATKHAU='" + password + "'";
 
         try {
+            connection = dbUltils.getConnection();
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
