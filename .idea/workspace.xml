@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add jfoenix-9.0.4.jar to project">
-      <change afterPath="$PROJECT_DIR$/lib/fontawesomefx-8.9-jar/fontawesomefx-8.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/controller/MainMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/fxml/dashboardView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/fxml/employeeView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/fxml/mainMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/addBook.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/addEmployee.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/addReader.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/bookList.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/bookManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/bookissueForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/employeeList.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/issueBookForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/readerList.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/readerManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/fxml/searchBook.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QLTV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QLTV.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QLTV/bus/LoginBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QLTV/bus/LoginBus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QLTV/dal/LoginDal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QLTV/dal/LoginDal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QLTV/gui/controller/userLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QLTV/gui/controller/userLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/QLTV/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/QLTV/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bus/LoginBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bus/LoginBus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/LoginDal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/LoginDal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/userLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/userLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +77,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="reader" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -111,7 +111,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/fontawesomefx-8.9-jar/fontawesomefx-8.9.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/gui/fxml" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -119,12 +119,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\My Works\JAVA_SE\JAVA_WORKSPACE\QLTV\src\gui\fxml" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\fork\QLTV_JavaFX\src\gui\fxml" />
       <recent name="D:\My Works\JAVA_SE\JAVA_WORKSPACE\QLTV\src\gui\dialog" />
       <recent name="D:\My Works\JAVA_SE\JAVA_WORKSPACE\QLTV\src\utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Works\JAVA_SE\JAVA_WORKSPACE\QLTV\src\gui\fxml" />
     </key>
   </component>
   <component name="RunManager">
@@ -216,6 +217,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
