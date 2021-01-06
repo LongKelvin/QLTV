@@ -5,4 +5,6 @@ module QLTV {
     requires java.datatransfer;
     requires java.sql;
     opens gui;
+    opens gui.controller to javafx.fxml;
+    requires com.jfoenix;
 }
