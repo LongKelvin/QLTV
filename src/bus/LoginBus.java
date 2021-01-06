@@ -19,17 +19,24 @@ public class LoginBus {
         accountDto = new LoginAccountDto();
         currentUsername = currentPassword = "";
         accountDto = loginDAL.CheckAccount(username, password);
-        if (accountDto.username != null && accountDto.password != null) {
-            if (!accountDto.getPassword().isEmpty() && !accountDto.getUsername().isEmpty()) {
-                currentUsername = accountDto.getUsername();
-                currentPassword = accountDto.getPassword();
-                return true;
-            }
+
+        if (isNotNullOrEmpty(accountDto)) {
+            currentUsername = accountDto.getUsername();
+            currentPassword = accountDto.getPassword();
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    public final String GetAccountType(String username) {
+    public final String[] GetAccountType(String username) {
         return this.loginDAL.GetAccountType(username);
+    }
+
+    private boolean isNotNullOrEmpty(LoginAccountDto dto) {
+        if ((dto.getUsername() != null && !dto.getUsername().equals(""))
+                && (dto.getPassword() != null && !dto.getPassword().equals("")))
+            return true;
+        else return false;
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="380.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddreaderController">
+    <children>
+        <VBox fx:id="ExPPP" layoutX="-14.0" layoutY="-13.0" prefHeight="387.0" prefWidth="683.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXTextField fx:id="Name" labelFloat="true" prefWidth="663.0" promptText="BOOK NAME">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="Address" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="TYPE OF BOOK">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </JFXTextField>
+                <JFXTextField fx:id="Ex" labelFloat="true" layoutX="10.0" layoutY="123.0" promptText="AUTHOR">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </JFXTextField>
+                <JFXTextField fx:id="Payment_Fines" labelFloat="true" layoutX="10.0" layoutY="123.0" promptText="YEAR PUBLISHED">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </JFXTextField>
+            <JFXTextField fx:id="Payment_Fines1" labelFloat="true" layoutX="20.0" layoutY="173.0" promptText="DATE OF ENTRY">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="Payment_Fines11" labelFloat="true" layoutX="10.0" layoutY="214.0" promptText="BOOK PRICE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <HBox prefHeight="74.0" prefWidth="683.0">
+               <children>
+                  <JFXButton prefHeight="65.0" prefWidth="351.0" stylesheets="@../../styles/button.css" text="SAVE" />
+                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="351.0" stylesheets="@../../styles/button.css" text="CANCEL" />
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
