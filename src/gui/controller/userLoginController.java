@@ -44,24 +44,24 @@ public class userLoginController implements Initializable {
 
     @FXML
     void btnLoginClick() {
-//        if (!isInValidInput()) {
-//            if (loginBus.IsValid(txtUsername.getText(), txtPassword.getText())) {
-//
-//                String[] accountType = loginBus.GetAccountType(txtUsername.getText());
-//                if (accountType != null) {
-//                    String employeePos = accountType[0];
-//                    String employeeCode = accountType[1];
-//                    System.out.println("Employee_Pos: " + employeePos);
-//                    System.out.println("Employee_Code: " + employeeCode);
-//                    openMainMenu();
-//                }
-//                System.out.println("LOGIN:: OK");
-//            } else {
-//                MaterialDialog.DialogOK(stackPane, "Notifications", " Incorrect username or password.", rootPane);
-//            }
-//        } else {
-//            MaterialDialog.DialogOK(stackPane, "Notifications", " Username or Password can not be empty.", rootPane);
-//        }
+        if (!isInValidInput()) {
+            if (loginBus.IsValid(txtUsername.getText(), txtPassword.getText())) {
+
+                String[] accountType = loginBus.GetAccountType(txtUsername.getText());
+                if (accountType != null) {
+                    String employeePos = accountType[0];
+                    String employeeCode = accountType[1];
+                    System.out.println("Employee_Pos: " + employeePos);
+                    System.out.println("Employee_Code: " + employeeCode);
+                    openMainMenu();
+                }
+                System.out.println("LOGIN:: OK");
+            } else {
+                MaterialDialog.DialogOK(stackPane, "Notifications", " Incorrect username or password.", rootPane);
+            }
+        } else {
+            MaterialDialog.DialogOK(stackPane, "Notifications", " Username or Password can not be empty.", rootPane);
+        }
         openMainMenu();
     }
 
