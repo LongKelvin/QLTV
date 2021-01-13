@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import utils.*;
@@ -45,7 +46,7 @@ public class userLoginController implements Initializable {
     }
 
     @FXML
-    void btnLoginClick() throws IOException {
+    void btnLoginClick() throws IOException, SQLException {
         if (!isInValidInput()) {
             if (loginBus.IsValid(txtUsername.getText(), txtPassword.getText())) {
 
@@ -68,6 +69,8 @@ public class userLoginController implements Initializable {
 
         TestNhanVienDAL testNhanVienDAL = new TestNhanVienDAL();
         testNhanVienDAL.TestSelectAllNhanVien();
+        testNhanVienDAL.TestSelectByKey("l");
+        testNhanVienDAL.TestDeleteNhanVien("9");
     }
 
 

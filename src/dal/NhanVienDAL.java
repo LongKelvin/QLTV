@@ -94,15 +94,29 @@ public class NhanVienDAL {
         return true;
     }
 
-    public final boolean XoaNV(NhanVienDTO NhanVienDTO) {
+    public final boolean XoaNV(NhanVienDTO NhanVienDTO) throws SQLException {
         connection = dbUltils.getConnection();
         String query = "";
-        query += "DELETE FROM NHANVIEN WHERE MANV = @MANV";
+        boolean result = false;
+
+//        query += "DELETE FROM TAIKHOANNV WHERE MANV = ?";
+//        try {
+//            PreparedStatement preDeleteEmp = connection.prepareStatement(query);
+//            preDeleteEmp.setString(1, NhanVienDTO.getStrMaNhanVien());
+//             result = preDeleteEmp.execute();
+//
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//
+//        if (result==false) {
+//            return false;
+//        }
 
         try {
             preparedStatement = connection.prepareStatement("DELETE FROM NHANVIEN WHERE MANV = ?");
             preparedStatement.setString(1, NhanVienDTO.getStrMaNhanVien());
-            preparedStatement.executeQuery();
+            preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("Login SQL Error, Cannot get information");
@@ -144,7 +158,7 @@ public class NhanVienDAL {
                 nhanVienDTO.setStrMaNhanVien(resultSet.getString("MANV"));
                 nhanVienDTO.setStrHoTen(resultSet.getString("HOTEN"));
 
-              //  nhanVienDTO.setDtNgaySinh(LocalDateTime.parse(resultSet.getString("NGAYSINH")));
+                //  nhanVienDTO.setDtNgaySinh(LocalDateTime.parse(resultSet.getString("NGAYSINH")));
                 nhanVienDTO.setDtNgaySinh((resultSet.getTimestamp("NGAYSINH").toLocalDateTime()));
 
                 nhanVienDTO.setStrMaChucVu(resultSet.getString("CHUCVU"));
@@ -187,14 +201,16 @@ public class NhanVienDAL {
                     "        OR(CHUCVUNV.CHUCVU LIKE CONCAT('%', ?, '%'))\n" +
                     "        ORDER BY MANV ASC");
             preparedStatement.setString(1, sKeyword);
+            preparedStatement.setString(2, sKeyword);
+            preparedStatement.setString(3, sKeyword);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 NhanVienDTO nhanVienDTO = new NhanVienDTO();
                 nhanVienDTO.setStrMaNhanVien(resultSet.getString("MANV"));
                 nhanVienDTO.setStrHoTen(resultSet.getString("HOTEN"));
-                nhanVienDTO.setDtNgaySinh(LocalDateTime.parse(resultSet.getString("NGAYSINH")));
+                nhanVienDTO.setDtNgaySinh((resultSet.getTimestamp("NGAYSINH").toLocalDateTime()));
                 nhanVienDTO.setStrMaChucVu(resultSet.getString("CHUCVU"));
-                nhanVienDTO.setDtNgayVaoLam(LocalDateTime.parse(resultSet.getString("NGAYVAOLAM")));
+                nhanVienDTO.setDtNgayVaoLam((resultSet.getTimestamp("NGAYVAOLAM").toLocalDateTime()));
                 nhanVienDTO.setStrEmail(resultSet.getString("EMAIL"));
                 nhanVienDTO.setStrSoDT(resultSet.getString("SDT"));
                 nhanVienDTO.setStrDiaChi(resultSet.getString("DIACHI"));
