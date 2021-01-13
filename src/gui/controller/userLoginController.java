@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import utils.*;
+
 public class userLoginController implements Initializable {
 
     String ERROR_TAG = "Something Went Wrong!!!";
@@ -43,7 +45,7 @@ public class userLoginController implements Initializable {
     }
 
     @FXML
-    void btnLoginClick() {
+    void btnLoginClick() throws IOException {
         if (!isInValidInput()) {
             if (loginBus.IsValid(txtUsername.getText(), txtPassword.getText())) {
 
@@ -62,7 +64,10 @@ public class userLoginController implements Initializable {
         } else {
             MaterialDialog.DialogOK(stackPane, "Notifications", " Username or Password can not be empty.", rootPane);
         }
-        openMainMenu();
+       // openMainMenu();
+
+        TestNhanVienDAL testNhanVienDAL = new TestNhanVienDAL();
+        testNhanVienDAL.TestSelectAllNhanVien();
     }
 
 
@@ -94,4 +99,6 @@ public class userLoginController implements Initializable {
             MaterialDialog.DialogOK(stackPane,ERROR_TAG ,e.toString(), rootPane);
         }
     }
+
+
 }
