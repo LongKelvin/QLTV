@@ -3,6 +3,7 @@ package gui.controller;
 import bus.LoginBus;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import dto.ChucVuNVDTO;
 import gui.Main;
 import gui.dialog.MaterialDialog;
 import javafx.application.Platform;
@@ -67,10 +68,13 @@ public class userLoginController implements Initializable {
         }
        // openMainMenu();
 
-        TestNhanVienDAL testNhanVienDAL = new TestNhanVienDAL();
-        testNhanVienDAL.TestSelectAllNhanVien();
-        testNhanVienDAL.TestSelectByKey("l");
-        testNhanVienDAL.TestDeleteNhanVien("9");
+        TestChucVuDAL cv = new TestChucVuDAL();
+        cv.TestSelectAllPos();
+        ChucVuNVDTO cv1 = new ChucVuNVDTO();
+       // cv.TestAddNewPos("Tổng Giám Đốc Khu Vực");
+        cv1.setStrTenLoaiChucVu("Giám Đốc ASIA PF");
+        cv1.setStrMaLoaiChucVu("5");
+        cv.TestUpdateChucVu(cv1);
     }
 
 

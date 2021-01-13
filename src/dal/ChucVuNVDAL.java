@@ -23,14 +23,11 @@ public class ChucVuNVDAL {
 
     public final boolean ThemChucVu(ChucVuNVDTO chucVu) {
         connection = dbUltils.getConnection();
-        String query = "";
-        query += "INSERT INTO CHUCVUNV";
-        query += "VALUES " + chucVu.getStrMaLoaiChucVu() + ",";
-
-
         try {
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement("INSERT INTO CHUCVUNV (MACHUCVU, CHUCVU) VALUES (?, ?)");
+            preparedStatement.setString(1, chucVu.getStrMaLoaiChucVu());
+            preparedStatement.setString(2, chucVu.getStrTenLoaiChucVu());
+            preparedStatement.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,12 +47,10 @@ public class ChucVuNVDAL {
 
     public final boolean XoaChucVu(ChucVuNVDTO chucVu) {
         connection = dbUltils.getConnection();
-        String query = "";
-        query += "DELETE FROM CHUCVUNV WHERE [MACHUCVU] = " + chucVu.getStrMaLoaiChucVu();
-
         try {
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement("DELETE FROM CHUCVUNV  WHERE MACHUCVU = ?");
+            preparedStatement.setString(1, chucVu.getStrMaLoaiChucVu());
+            preparedStatement.execute();
 
 
         } catch (SQLException e) {
@@ -78,11 +73,11 @@ public class ChucVuNVDAL {
     public final boolean SuaChucVu(ChucVuNVDTO chucVu) {
         connection = dbUltils.getConnection();
         String query = "";
-        query += "UPDATE CHUCVUNV SET CHUCVU =" + chucVu.getStrTenLoaiChucVu() + " WHERE MACHUCVU =" + chucVu.getStrMaLoaiChucVu();
         try {
-            connection = dbUltils.getConnection();
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement("UPDATE CHUCVUNV SET CHUCVU = ? WHERE MACHUCVU = ?");
+            preparedStatement.setString(1, chucVu.getStrTenLoaiChucVu());
+            preparedStatement.setString(2, chucVu.getStrMaLoaiChucVu());
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -108,9 +103,7 @@ public class ChucVuNVDAL {
 
         ArrayList<ChucVuNVDTO> ListChucVu = new java.util.ArrayList<>();
 
-
         try {
-            connection = dbUltils.getConnection();
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
