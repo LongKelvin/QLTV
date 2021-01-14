@@ -10,7 +10,6 @@ import java.time.format.DateTimeFormatter;
 
 public class NhanVienDAL {
 
-    private final LoginAccountDto result = new LoginAccountDto();
     private Connection connection;
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;

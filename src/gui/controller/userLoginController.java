@@ -75,6 +75,9 @@ public class userLoginController implements Initializable {
         cv1.setStrTenLoaiChucVu("Giám Đốc ASIA PF");
         cv1.setStrMaLoaiChucVu("5");
         cv.TestUpdateChucVu(cv1);
+
+        TestTaiKhoanDAL tk = new TestTaiKhoanDAL();
+        tk.TestSelectAllTK("");
     }
 
 
