@@ -68,16 +68,9 @@ public class userLoginController implements Initializable {
         }
        // openMainMenu();
 
-        TestChucVuDAL cv = new TestChucVuDAL();
-        cv.TestSelectAllPos();
-        ChucVuNVDTO cv1 = new ChucVuNVDTO();
-       // cv.TestAddNewPos("Tổng Giám Đốc Khu Vực");
-        cv1.setStrTenLoaiChucVu("Giám Đốc ASIA PF");
-        cv1.setStrMaLoaiChucVu("5");
-        cv.TestUpdateChucVu(cv1);
-
-        TestTaiKhoanDAL tk = new TestTaiKhoanDAL();
-        tk.TestSelectAllTK("");
+        TestSachDAL dal = new TestSachDAL();
+        //dal.TestSelectAllSach();
+        dal.TestSelectByKey("te");
     }
 
 

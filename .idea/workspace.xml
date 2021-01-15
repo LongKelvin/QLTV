@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add jfoenix-9.0.4.jar to project">
-      <change afterPath="$PROJECT_DIR$/src/dal/SachDAL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/TestSachDAL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/NhanVienDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/NhanVienDAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/TaiKhoanDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/TaiKhoanDAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/SachDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/SachDAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/SachDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/SachDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller/userLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller/userLoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

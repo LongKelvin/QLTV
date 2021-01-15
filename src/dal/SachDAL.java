@@ -44,7 +44,58 @@ public class SachDAL
 				sachDTO.setNxb((resultSet.getString("NXB")));
 				sachDTO.setNamxb(Integer.parseInt(resultSet.getString("NAMXB")));
 				sachDTO.setNgaynhap(resultSet.getTimestamp("NGAYNHAP").toLocalDateTime());
-				sachDTO.setDongia(Integer.parseInt(resultSet.getString("DONGIA")));
+				sachDTO.setDongia((int) Math.round(Float.parseFloat(resultSet.getString("DONGIA"))));
+				sachDTO.setSoluong(Integer.parseInt(resultSet.getString("SOLUONG")));
+				sachDTO.setLuotmuon(Integer.parseInt(resultSet.getString("LUOTMUON")));
+				ListSach.add(sachDTO);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.err.println("Login SQL Error, Cannot get information");
+			return null;
+
+		} finally {
+			try {
+				connection.close();
+				preparedStatement.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+		return ListSach;
+	}
+
+	public final java.util.ArrayList<SachDTO> SelectListBookByKeyWord(String sKeyword)
+	{
+		connection = dbUltils.getConnection();
+		java.util.ArrayList<SachDTO> ListSach = new java.util.ArrayList<>();
+
+		try {
+			preparedStatement = connection.prepareStatement( " SELECT MASACH, TENSACH, TACGIA, TENTHELOAI,  NXB, NAMXB, NGAYNHAP, DONGIA, SACH.SOLUONG, LUOTMUON "+
+					" FROM SACH ,THELOAISACH "+
+					" WHERE (MASACH LIKE CONCAT('%',?,'%'))"+
+					" OR (TENSACH LIKE CONCAT('%',?,'%'))"+
+					" OR (TACGIA LIKE CONCAT('%',?,'%'))"+
+					" OR (THELOAISACH.TENTHELOAI LIKE CONCAT('%',?,'%'))"+
+					" ORDER BY THELOAISACH.MATHELOAI  ASC");
+			preparedStatement.setString(1, sKeyword);
+			preparedStatement.setString(2, sKeyword);
+			preparedStatement.setString(3, sKeyword);
+			preparedStatement.setString(4, sKeyword);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				SachDTO sachDTO = new SachDTO();
+				sachDTO.setMasach(resultSet.getString("MASACH"));
+				sachDTO.setTensach(resultSet.getString("TENSACH"));
+				sachDTO.setTacgia((resultSet.getString("TACGIA")));
+				sachDTO.setTheloai(resultSet.getString("TENTHELOAI"));
+				sachDTO.setNxb((resultSet.getString("NXB")));
+				sachDTO.setNamxb(Integer.parseInt(resultSet.getString("NAMXB")));
+				sachDTO.setNgaynhap(resultSet.getTimestamp("NGAYNHAP").toLocalDateTime());
+				sachDTO.setDongia((int) Math.round(Float.parseFloat(resultSet.getString("DONGIA"))));
 				sachDTO.setSoluong(Integer.parseInt(resultSet.getString("SOLUONG")));
 				sachDTO.setLuotmuon(Integer.parseInt(resultSet.getString("LUOTMUON")));
 				ListSach.add(sachDTO);
@@ -249,6 +300,7 @@ public class SachDAL
 			preparedStatement.setString(1, sKeyword);
 			preparedStatement.setString(2, sKeyword);
 			preparedStatement.setString(3, sKeyword);
+			preparedStatement.setString(4, sKeyword);
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				SachDTO sachDTO = new SachDTO();
@@ -256,12 +308,6 @@ public class SachDAL
 				sachDTO.setTensach(resultSet.getString("TENSACH"));
 				sachDTO.setTacgia((resultSet.getString("TACGIA")));
 				sachDTO.setTheloai(resultSet.getString("TENTHELOAI"));
-				sachDTO.setNxb((resultSet.getString("NXB")));
-				sachDTO.setNamxb(Integer.parseInt(resultSet.getString("NAMXB")));
-				sachDTO.setNgaynhap(resultSet.getTimestamp("NGAYNHAP").toLocalDateTime());
-				sachDTO.setDongia(Integer.parseInt(resultSet.getString("DONGIA")));
-				sachDTO.setSoluong(Integer.parseInt(resultSet.getString("SOLUONG")));
-				sachDTO.setLuotmuon(Integer.parseInt(resultSet.getString("LUOTMUON")));
 				ListSach.add(sachDTO);
 			}
 		} catch (SQLException e) {

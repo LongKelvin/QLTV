@@ -96,19 +96,6 @@ public class SachDTO
 		masach = value;
 	}
 
-//	public final void NewBook(DataRow temp)
-//	{
-//		setMasach(temp.get(0).toString());
-//		setTensach(temp.get(1).toString());
-//		setTacgia(temp.get(2).toString());
-//		setTheloai(temp.get(3).toString());
-//		setNxb(temp.get(4).toString());
-//		setNamxb(Integer.parseInt(temp.get(5).toString()));
-//		setNgaynhap(LocalDateTime.parse(temp.get(6).toString()));
-//		setDongia(Integer.parseInt(temp.get(7).toString(), NumberStyles.Currency));
-//		setSoluong(Integer.parseInt(temp.get(8).toString()));
-//		setLuotmuon(Integer.parseInt(temp.get(9).toString()));
-//	}
 
 	public final boolean IsValid()
 	{
