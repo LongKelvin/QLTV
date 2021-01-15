@@ -23,10 +23,6 @@ public class TaiKhoanDAL
 	public final boolean ThemTK(TaiKhoanDTO TaiKhoanDTO)
 	{
 
-
-		String query = "INSERT INTO TAIKHOANNV (TENTK, MATKHAU, MACHUCVU, MANV) ";
-		query += "VALUES( @TENTK , @MATKHAU , @MACHUCVU , @MANV )";
-
 		connection = dbUltils.getConnection();
 		try {
 			preparedStatement = connection.prepareStatement("INSERT INTO TAIKHOANNV (TENTK, MATKHAU, MACHUCVU, MANV)  " +
@@ -58,12 +54,6 @@ public class TaiKhoanDAL
 
 	public final boolean SuaTK(TaiKhoanDTO TaiKhoanDTO)
 	{
-		String query = "";
-
-		query += "UPDATE TAIKHOANNV ";
-		query += "SET TENTK = @TENTK, MATKHAU = @MATKHAU, MACHUCVU = @MACHUCVU ";
-		query += "WHERE MANV = @MANV";
-
 		connection = dbUltils.getConnection();
 		try {
 			preparedStatement = connection.prepareStatement("UPDATE [TAIKHOANNV] " +

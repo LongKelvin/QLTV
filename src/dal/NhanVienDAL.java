@@ -95,22 +95,6 @@ public class NhanVienDAL {
 
     public final boolean XoaNV(NhanVienDTO NhanVienDTO) throws SQLException {
         connection = dbUltils.getConnection();
-        String query = "";
-        boolean result = false;
-
-//        query += "DELETE FROM TAIKHOANNV WHERE MANV = ?";
-//        try {
-//            PreparedStatement preDeleteEmp = connection.prepareStatement(query);
-//            preDeleteEmp.setString(1, NhanVienDTO.getStrMaNhanVien());
-//             result = preDeleteEmp.execute();
-//
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//
-//        if (result==false) {
-//            return false;
-//        }
 
         try {
             preparedStatement = connection.prepareStatement("DELETE FROM NHANVIEN WHERE MANV = ?");
@@ -133,9 +117,7 @@ public class NhanVienDAL {
         return true;
     }
 
-    public final boolean XemDanhSachNV(NhanVienDTO NhanVienDTO) {
-        return true;
-    }
+
 
     public final java.util.ArrayList<NhanVienDTO> Select() {
         connection = dbUltils.getConnection();
