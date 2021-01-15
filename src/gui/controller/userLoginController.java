@@ -68,9 +68,9 @@ public class userLoginController implements Initializable {
         }
        // openMainMenu();
 
-        TestSachDAL dal = new TestSachDAL();
+        TestPhieuMuonDAL dal = new TestPhieuMuonDAL();
         //dal.TestSelectAllSach();
-        dal.TestSelectByKey("te");
+       dal.TestSelectByKey("a");
     }
 
 

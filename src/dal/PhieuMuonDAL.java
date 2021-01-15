@@ -139,8 +139,6 @@ public class PhieuMuonDAL
 	{
 		java.util.ArrayList<PhieuMuonDTO> ListPhieuMuon = new java.util.ArrayList<PhieuMuonDTO>();
 
-
-
 		connection = dbUltils.getConnection();
 		java.util.ArrayList<NhanVienDTO> ListNhanVien = new java.util.ArrayList<NhanVienDTO>();
 
@@ -199,10 +197,10 @@ public class PhieuMuonDAL
 				phieuMuonDTO.setMadg((resultSet.getString("MADG")));
 				phieuMuonDTO.setNgaymuon(resultSet.getTimestamp("NGAYMUON").toLocalDateTime());
 				phieuMuonDTO.setHantra((resultSet.getTimestamp("HANTRA").toLocalDateTime()));
-				phieuMuonDTO.setHoten(resultSet.getString("HOTEN"));
+				//phieuMuonDTO.setHoten(resultSet.getString("HOTEN"));
 				phieuMuonDTO.setSoluong((resultSet.getInt("SOLUONG")));
-				phieuMuonDTO.setMucphat(resultSet.getBigDecimal("MUCPHAT"));
-				ListPhieuMuon.add(phieuMuonDTO);
+				//phieuMuonDTO.setMucphat(resultSet.getBigDecimal("MUCPHAT"));
+				//ListPhieuMuon.add(phieuMuonDTO);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -240,6 +238,7 @@ public class PhieuMuonDAL
 			preparedStatement.setString(1, sKeyword);
 			preparedStatement.setString(2, sKeyword);
 			preparedStatement.setString(3, sKeyword);
+			preparedStatement.setString(4, sKeyword);
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				PhieuMuonDTO phieuMuonDTO = new PhieuMuonDTO();
@@ -248,9 +247,9 @@ public class PhieuMuonDAL
 				phieuMuonDTO.setMadg((resultSet.getString("MADG")));
 				phieuMuonDTO.setNgaymuon(resultSet.getTimestamp("NGAYMUON").toLocalDateTime());
 				phieuMuonDTO.setHantra((resultSet.getTimestamp("HANTRA").toLocalDateTime()));
-				phieuMuonDTO.setHoten(resultSet.getString("HOTEN"));
+				//phieuMuonDTO.setHoten(resultSet.getString("HOTEN"));
 				phieuMuonDTO.setSoluong((resultSet.getInt("SOLUONG")));
-				phieuMuonDTO.setMucphat(resultSet.getBigDecimal("MUCPHAT"));
+				//phieuMuonDTO.setMucphat(resultSet.getBigDecimal("MUCPHAT"));
 				ListPhieuMuon.add(phieuMuonDTO);
 			}
 		} catch (SQLException e) {
@@ -277,7 +276,7 @@ public class PhieuMuonDAL
 	{
 		java.util.ArrayList<PhieuMuonDTO> ListPhieuMuon = new java.util.ArrayList<PhieuMuonDTO>();
 
-		String query = "SELECT[MAPM],[MASACH],[MADG],[NGAYMUON],[HANTRA] FROM[PHIEUMUON] ";
+		String query = "SELECT[MAPM],[MASACH],[MADG],[NGAYMUON],[HANTRA] [SOLUONG] FROM[PHIEUMUON] ";
 		query += "WHERE MAPM = ? ";
 
 		connection = dbUltils.getConnection();
@@ -292,6 +291,7 @@ public class PhieuMuonDAL
 				phieuMuonDTO.setMadg((resultSet.getString("MADG")));
 				phieuMuonDTO.setNgaymuon(resultSet.getTimestamp("NGAYMUON").toLocalDateTime());
 				phieuMuonDTO.setHantra((resultSet.getTimestamp("HANTRA").toLocalDateTime()));
+				phieuMuonDTO.setSoluong(resultSet.getInt("SOLUONG"));
 				ListPhieuMuon.add(phieuMuonDTO);
 			}
 		} catch (SQLException e) {
@@ -346,12 +346,45 @@ public class PhieuMuonDAL
 		return true;
 	}
 
+	public final boolean UpdateSoLuongKhiTraSach(PhieuMuonDTO phieuMuon)
+	{
+		String query = "";
+		query += "UPDATE PHIEUMUON ";
+		query += "SET MASACH = ? , MADG = ? , SOLUONG = SOLUONG-1 ";
+		query += " WHERE MAPM = ?";
+
+
+		connection = dbUltils.getConnection();
+
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, phieuMuon.getMasach());
+			preparedStatement.setString(2, phieuMuon.getMadg());
+			preparedStatement.setString(4, phieuMuon.getMapm());
+			preparedStatement.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.err.println("Login SQL Error, Cannot get information");
+			return false;
+		} finally {
+			try {
+				connection.close();
+				preparedStatement.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return true;
+	}
+
 	public final boolean ThemPhieuMuon(PhieuMuonDTO phieuMuon)
 	{
 		String query = "";
 
-		query += "INSERT INTO PHIEUMUON(MASACH, MADG, NGAYMUON, HANTRA, SOLUONG, MUCPHAT) ";
-		query += "VALUES ( @MASACH , @MADG , @NGAYMUON , @HANTRA , @SOLUONG , @MUCPHAT  )";
+//		query += "INSERT INTO PHIEUMUON(MASACH, MADG, NGAYMUON, HANTRA, SOLUONG, MUCPHAT) ";
+//		query += "VALUES ( @MASACH , @MADG , @NGAYMUON , @HANTRA , @SOLUONG , @MUCPHAT  )";
 
 		query += "INSERT INTO PHIEUMUON(MASACH, MADG, NGAYMUON, HANTRA, SOLUONG, MUCPHAT) ";
 		query += "VALUES ( ? , ? , ? , ? , ? , ? )";
