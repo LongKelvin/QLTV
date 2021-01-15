@@ -86,18 +86,6 @@ public class PhieuMuonDTO
 	}
 
 
-//	public PhieuMuonDTO(String mapm1, String masach1, String madg1, java.time.LocalDateTime ngaymuon1, java.time.LocalDateTime hantra1, String hoten1)
-//	{
-//		this(mapm1, masach1, madg1, ngaymuon1, hantra1, hoten1, 0);
-//	}
-
-//	public PhieuMuonDTO(String mapm1, String masach1, String madg1, java.time.LocalDateTime ngaymuon1, java.time.LocalDateTime hantra1)
-//	{
-//		this(mapm1, masach1, madg1, ngaymuon1, hantra1, "", 0);
-//	}
-
-//C# TO JAVA CONVERTER NOTE: Java does not support optional parameters. Overloaded method(s) are created above:
-//ORIGINAL LINE: public PhieuMuonDTO(string mapm1, string masach1, string madg1, DateTime ngaymuon1, DateTime hantra1, string hoten1 = "", decimal mucphat1 = 0)
 	public PhieuMuonDTO(String mapm1, String masach1, String madg1, LocalDateTime ngaymuon1, LocalDateTime hantra1, String hoten1, BigDecimal mucphat1)
 	{
 		setMapm(mapm1);
@@ -125,29 +113,7 @@ public class PhieuMuonDTO
 		return ans;
 	}
 
-//	public PhieuMuonDTO(DataRow row)
-//	{
-//		setMapm(row.get(0).toString());
-//		setMasach(row.get(1).toString());
-//		setMadg(row.get(2).toString());
-//		setNgaymuon(LocalDateTime.parse(row.get(3).toString()));
-//		setHantra(LocalDateTime.parse(row.get(4).toString()));
-//		setHoten(row.get(5).toString());
-//		setSoluong(Integer.parseInt(row.get(6).toString()));
-//		String tmp = row.get(7).toString();
-//		setMucphat(BigDecimal.Parse(tmp));
-//
-//	}
-//
-//	public final void NewReceipt(DataRow row)
-//	{
-//		setMapm(row.get(0).toString());
-//		setMasach(row.get(1).toString());
-//		setMadg(row.get(2).toString());
-//		setNgaymuon(LocalDateTime.parse(row.get(3).toString()));
-//		setHantra(LocalDateTime.parse(row.get(4).toString()));
-//		setSoluong(Integer.parseInt(row.get(5).toString()));
-//	}
+
 
 	public final boolean IsOverdue()
 	{
