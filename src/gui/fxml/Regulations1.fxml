@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="551.0" prefWidth="1079.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.fxml.Regulations">
+<AnchorPane prefHeight="551.0" prefWidth="1079.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.Regulations1Controller">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -49,7 +49,7 @@
                         <TextField fx:id="rd_maximum_age" layoutX="474.0" layoutY="61.0" prefHeight="25.0" prefWidth="197.0" />
                         <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
                            <children>
-                              <JFXButton fx:id="rd_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                              <JFXButton fx:id="rd_add_button" contentDisplay="TOP" onAction="#Click_rd_add_button" prefHeight="40.0" prefWidth="200.0" text="ADD">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -58,7 +58,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="rd_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                              <JFXButton fx:id="rd_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_rd_remove_button" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -67,7 +67,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="rd_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                              <JFXButton fx:id="rd_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" onAction="#Click_rd_edit_button" prefHeight="55.0" prefWidth="200.0" text="EDIT">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -76,7 +76,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="rd_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                              <JFXButton fx:id="rd_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" onAction="#Click_rd_clear_button" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -97,7 +97,7 @@
                               </TableView>
                               <HBox prefHeight="22.0" prefWidth="400.0">
                                  <children>
-                                    <JFXButton fx:id="rd_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                    <JFXButton fx:id="rd_save_button" contentDisplay="TOP" onAction="#Click_rd_save_button" prefHeight="71.0" prefWidth="93.0" text="SAVE">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -106,7 +106,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="rd_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                    <JFXButton fx:id="rd_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_rd_exit_button" prefHeight="0.0" prefWidth="87.0" text="EXIT">
                                        <graphic>
                                           <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -118,7 +118,7 @@
                                           <Insets top="10.0" />
                                        </HBox.margin>
                                     </JFXButton>
-                                    <JFXButton fx:id="rd_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                    <JFXButton fx:id="rd_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_rd_edit_button_2" prefHeight="72.0" prefWidth="92.0" text="EDIT">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -127,7 +127,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="rd_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
+                                    <JFXButton fx:id="rd_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" onAction="#Click_rd_clear_button_2" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
                                        <graphic>
                                           <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -177,7 +177,7 @@
                         <TextField fx:id="b_expiry_date_of_book" layoutX="476.0" layoutY="37.0" prefHeight="25.0" prefWidth="171.0" />
                         <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
                            <children>
-                              <JFXButton fx:id="b_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                              <JFXButton fx:id="b_add_button" contentDisplay="TOP" onAction="#Click_b_add_button" prefHeight="40.0" prefWidth="200.0" text="ADD">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -186,7 +186,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="b_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                              <JFXButton fx:id="b_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_b_remove_button" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -195,7 +195,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="b_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                              <JFXButton fx:id="b_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" onAction="#Click_b_edit_button" prefHeight="55.0" prefWidth="200.0" text="EDIT">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -204,7 +204,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="b_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                              <JFXButton fx:id="b_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" onAction="#Click_b_clear_button" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -225,7 +225,7 @@
                               </TableView>
                               <HBox prefHeight="22.0" prefWidth="400.0">
                                  <children>
-                                    <JFXButton fx:id="b_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                    <JFXButton fx:id="b_save_button" contentDisplay="TOP" onAction="#Click_b_save_button" prefHeight="71.0" prefWidth="93.0" text="SAVE">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -234,7 +234,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="b_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                    <JFXButton fx:id="b_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_b_exit_button" prefHeight="0.0" prefWidth="87.0" text="EXIT">
                                        <graphic>
                                           <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -246,7 +246,7 @@
                                           <Insets top="10.0" />
                                        </HBox.margin>
                                     </JFXButton>
-                                    <JFXButton fx:id="b_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                    <JFXButton fx:id="b_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_b_edit_button_2" prefHeight="72.0" prefWidth="92.0" text="EDIT">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -255,7 +255,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="b_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
+                                    <JFXButton fx:id="b_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" onAction="#Click_b_clear_button_2" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
                                        <graphic>
                                           <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -310,7 +310,7 @@
                         <TextField fx:id="e_maximum_age" layoutX="124.0" layoutY="61.0" prefHeight="25.0" prefWidth="197.0" />
                         <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
                            <children>
-                              <JFXButton fx:id="e_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                              <JFXButton fx:id="e_add_button" contentDisplay="TOP" onAction="#Click_e_add_button" prefHeight="40.0" prefWidth="200.0" text="ADD">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -319,7 +319,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="e_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                              <JFXButton fx:id="e_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_e_remove_button" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -328,7 +328,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="e_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                              <JFXButton fx:id="e_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" onAction="#Click_e_edit_button" prefHeight="55.0" prefWidth="200.0" text="EDIT">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -337,7 +337,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="e_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                              <JFXButton fx:id="e_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" onAction="#Click_e_clear_button" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
                                  <graphic>
                                     <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -358,7 +358,7 @@
                               </TableView>
                               <HBox prefHeight="22.0" prefWidth="400.0">
                                  <children>
-                                    <JFXButton fx:id="e_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                    <JFXButton fx:id="e_save_button" contentDisplay="TOP" onAction="#Click_e_save_button" prefHeight="71.0" prefWidth="93.0" text="SAVE">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -367,7 +367,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="e_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                    <JFXButton fx:id="e_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_e_exit_button" prefHeight="0.0" prefWidth="87.0" text="EXIT">
                                        <graphic>
                                           <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -379,7 +379,7 @@
                                           <Insets top="10.0" />
                                        </HBox.margin>
                                     </JFXButton>
-                                    <JFXButton fx:id="e_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                    <JFXButton fx:id="e_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#Click_e_edit_button_2" prefHeight="72.0" prefWidth="92.0" text="EDIT">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -388,7 +388,7 @@
                                           </ImageView>
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="e_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CEAR">
+                                    <JFXButton fx:id="e_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" onAction="#Click_e_clear_button_2" prefHeight="71.0" prefWidth="87.0" text="CEAR">
                                        <graphic>
                                           <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                              <image>

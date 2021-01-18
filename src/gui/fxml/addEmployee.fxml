@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="437.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddreaderController">
+<AnchorPane prefHeight="437.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddEmployeeController">
     <children>
-        <VBox fx:id="ExPPP" layoutX="-14.0" layoutY="-13.0" prefHeight="387.0" prefWidth="683.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox layoutX="-14.0" layoutY="-13.0" prefHeight="387.0" prefWidth="683.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <JFXTextField fx:id="name" labelFloat="true" prefWidth="663.0" promptText="NAME">
                     <VBox.margin>
@@ -71,8 +71,8 @@
             </JFXTextField>
             <HBox prefHeight="97.0" prefWidth="691.0">
                <children>
-                  <JFXButton prefHeight="74.0" prefWidth="359.0" stylesheets="@../../styles/button.css" text="SAVE" />
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="74.0" prefWidth="359.0" stylesheets="@../../styles/button.css" text="CANCEL" />
+                  <JFXButton fx:id="save_button" onAction="#Click_save_button" prefHeight="74.0" prefWidth="359.0" stylesheets="@../../styles/button.css" text="SAVE" />
+                  <JFXButton fx:id="cancel_button" layoutX="10.0" layoutY="10.0" onAction="#Click_cancel_button" prefHeight="74.0" prefWidth="359.0" stylesheets="@../../styles/button.css" text="CANCEL" />
                </children>
             </HBox>
             </children>

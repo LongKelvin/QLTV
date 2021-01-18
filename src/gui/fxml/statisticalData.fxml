@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StatisticalDataController">
+   <children>
+      <TabPane layoutX="10.0" layoutY="10.0" prefHeight="682.0" prefWidth="1620.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="READER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutY="91.0" prefHeight="478.0" prefWidth="1610.0">
+                           <columns>
+                              <TableColumn fx:id="stt" prefWidth="71.0" text="STT" />
+                              <TableColumn fx:id="reader_id" minWidth="0.0" prefWidth="99.0" text="READER ID " />
+                              <TableColumn fx:id="name" prefWidth="140.0" text="NAME" />
+                              <TableColumn fx:id="date_of_birth" prefWidth="155.0" text="DATE OF BIRTH" />
+                              <TableColumn fx:id="address" prefWidth="180.0" text="ADDRESS" />
+                              <TableColumn fx:id="email" prefWidth="144.0" text="EMAIL" />
+                              <TableColumn fx:id="date_of_card_issuance" prefWidth="161.0" text="DATE_OF_CARD_ISSUANCE" />
+                              <TableColumn fx:id="expiry_date" prefWidth="97.0" text="EXPIRY DATE" />
+                              <TableColumn fx:id="number_of_issued_books" prefWidth="169.0" text="NUMBER OF ISSUED BOOKS" />
+                              <TableColumn fx:id="number_of_issues" prefWidth="128.0" text="NUMBER OF ISSUES" />
+                              <TableColumn fx:id="fines" prefWidth="115.0" text="FINES" />
+                              <TableColumn fx:id="reader_type_id" prefWidth="150.0" text="READER TYPE ID" />
+                           </columns>
+                        </TableView>
+                        <ChoiceBox layoutX="14.0" layoutY="26.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="date_of_entry" prefHeight="643.0" prefWidth="1287.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="323.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="book_id" prefWidth="75.0" text="BOOK ID" />
+                              <TableColumn fx:id="book_name" prefWidth="133.0" text="BOOK NAME" />
+                              <TableColumn fx:id="author" prefWidth="137.0" text="AUTHOR" />
+                              <TableColumn fx:id="type_code" prefWidth="120.0" text="TYPE OF BOOK ID " />
+                              <TableColumn fx:id="publisher" prefWidth="144.0" text="PUBLISHER" />
+                              <TableColumn fx:id="year_published" prefWidth="211.0" text="YEAR PUBLISHED" />
+                              <TableColumn fx:id="date_of_entry" prefWidth="135.0" text="DATE OF ENTRY" />
+                              <TableColumn fx:id="price" minWidth="6.0" prefWidth="109.0" text="PRICE" />
+                              <TableColumn fx:id="quantity" prefWidth="91.0" text="QUANTITY" />
+                              <TableColumn fx:id="number_of_issues1" prefWidth="141.0" text="NUMBER OF ISSUES" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

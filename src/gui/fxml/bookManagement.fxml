@@ -42,7 +42,7 @@
                             <graphic>
                                 <ImageView fitHeight="53.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../../../Library-Assistant/src/library/assistant/ui/icons/search.png" />
+                                        <Image url="@../../images/add_book.png" />
                                     </image>
                                 </ImageView>
                             </graphic>

@@ -18,7 +18,7 @@
                      <graphic>
                         <ImageView fitHeight="47.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Library-Assistant/src/library/assistant/ui/icons/list_mem.png" />
+                              <Image url="@../../images/students_black.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -30,7 +30,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Library-Assistant/src/library/assistant/ui/icons/add_mem.png" />
+                              <Image url="@../../images/add_mem.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Library-Assistant/src/library/assistant/ui/icons/search.png" />
+                              <Image url="@../../images/icons8-search-256.png" />
                            </image>
                         </ImageView>
                      </graphic>
