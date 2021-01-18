@@ -359,7 +359,7 @@ public class SachDAL
 		try {
 			preparedStatement = connection.prepareStatement("UPDATE SACH SET  SOLUONG = SOLUONG + 1 WHERE MASACH = ? ");
 			preparedStatement.setString(1,sachDTO.getMasach());
-			preparedStatement.executeQuery();
+			preparedStatement.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.err.println("Login SQL Error, Cannot get information");
@@ -369,7 +369,6 @@ public class SachDAL
 			try {
 				connection.close();
 				preparedStatement.close();
-				resultSet.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

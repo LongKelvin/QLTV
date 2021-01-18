@@ -276,7 +276,7 @@ public class PhieuMuonDAL
 	{
 		java.util.ArrayList<PhieuMuonDTO> ListPhieuMuon = new java.util.ArrayList<PhieuMuonDTO>();
 
-		String query = "SELECT[MAPM],[MASACH],[MADG],[NGAYMUON],[HANTRA] [SOLUONG] FROM[PHIEUMUON] ";
+		String query = "SELECT[MAPM],[MASACH],[MADG],[NGAYMUON],[HANTRA], [SOLUONG] FROM[PHIEUMUON] ";
 		query += "WHERE MAPM = ? ";
 
 		connection = dbUltils.getConnection();
@@ -290,7 +290,13 @@ public class PhieuMuonDAL
 				phieuMuonDTO.setMasach(resultSet.getString("MASACH"));
 				phieuMuonDTO.setMadg((resultSet.getString("MADG")));
 				phieuMuonDTO.setNgaymuon(resultSet.getTimestamp("NGAYMUON").toLocalDateTime());
-				phieuMuonDTO.setHantra((resultSet.getTimestamp("HANTRA").toLocalDateTime()));
+				try {
+					phieuMuonDTO.setHantra((resultSet.getTimestamp("HANTRA").toLocalDateTime()));
+				}
+				catch (Exception e){
+
+				}
+
 				phieuMuonDTO.setSoluong(resultSet.getInt("SOLUONG"));
 				ListPhieuMuon.add(phieuMuonDTO);
 			}

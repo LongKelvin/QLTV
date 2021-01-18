@@ -79,9 +79,16 @@ public class PhieuTraDAL {
             preparedStatement.setString(1, returnReceipt.getMapm());
             preparedStatement.setString(2, returnReceipt.getMasach());
             preparedStatement.setString(3, returnReceipt.getMadg().toString());
-            preparedStatement.setString(4, String.valueOf(returnReceipt.getTienphat()));
-            preparedStatement.setString(5, returnReceipt.getNgaytra().toString());
-            preparedStatement.executeQuery();
+            preparedStatement.setString(5, String.valueOf(returnReceipt.getTienphat()));
+            try {
+                java.util.Date utilDate = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                preparedStatement.setString(4,returnReceipt.getNgaytra().toLocalDate().toString());
+                System.out.println("DATE___ :: "+ returnReceipt.getNgaytra().toString());
+
+            }
+            catch (Exception e){}
+            preparedStatement.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -91,7 +98,6 @@ public class PhieuTraDAL {
             try {
                 connection.close();
                 preparedStatement.close();
-                resultSet.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

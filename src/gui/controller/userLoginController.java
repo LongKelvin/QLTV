@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 import utils.*;
@@ -68,9 +70,10 @@ public class userLoginController implements Initializable {
         }
        // openMainMenu();
 
-        TestPhieuMuonDAL dal = new TestPhieuMuonDAL();
-        //dal.TestSelectAllSach();
-       dal.TestSelectByKey("a");
+        TestPhieuTraDAL dal = new TestPhieuTraDAL();
+        dal.TestCreatePTr();
+
+
     }
 
 
