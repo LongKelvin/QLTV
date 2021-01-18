@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="551.0" prefWidth="1079.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.fxml.Regulations">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="READER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="664.0">
+                     <children>
+                        <HBox layoutY="101.0" prefHeight="306.0" prefWidth="681.0">
+                           <children>
+                              <TableView prefHeight="327.0" prefWidth="671.0">
+                                <columns>
+                                  <TableColumn fx:id="Rd_rule_id" prefWidth="94.0" text="RULE ID" />
+                                  <TableColumn fx:id="Rd_minimum_age" prefWidth="107.0" text="MINIMUM AGE" />
+                                    <TableColumn fx:id="Rd_maximum_age" prefWidth="125.0" text="MAXIMUM AGE" />
+                                    <TableColumn fx:id="Rd_expiry_date" prefWidth="127.0" text="EXPIRY DATE" />
+                                    <TableColumn fx:id="Rd_start_date" prefWidth="112.0" text="START DATE" />
+                                    <TableColumn fx:id="Rd_end_date" prefWidth="116.0" text="END DATE" />
+                                </columns>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label layoutX="21.0" layoutY="14.0" prefHeight="23.0" prefWidth="75.0" text="RULE ID " />
+                        <Label layoutX="21.0" layoutY="64.0" prefHeight="18.0" prefWidth="90.0" text="MINIMUM AGE" />
+                        <Label layoutX="378.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="EXPIRY DATE" />
+                        <Label layoutX="376.0" layoutY="65.0" prefHeight="17.0" prefWidth="105.0" text="MAXIMUM AGE" />
+                        <TextField fx:id="rd_rule_id" layoutX="126.0" layoutY="13.0" prefHeight="25.0" prefWidth="193.0" />
+                        <TextField fx:id="rd_minimum_age" layoutX="126.0" layoutY="61.0" prefHeight="25.0" prefWidth="194.0" />
+                        <TextField fx:id="rd_expiry_date" layoutX="474.0" layoutY="13.0" prefHeight="25.0" prefWidth="196.0" />
+                        <TextField fx:id="rd_maximum_age" layoutX="474.0" layoutY="61.0" prefHeight="25.0" prefWidth="197.0" />
+                        <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
+                           <children>
+                              <JFXButton fx:id="rd_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/add_regolution.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="rd_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="rd_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="rd_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/clear.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="712.0" layoutY="102.0" prefHeight="305.0" prefWidth="368.0">
+                           <children>
+                              <TableView prefHeight="232.0" prefWidth="400.0">
+                                <columns>
+                                  <TableColumn fx:id="Rd_type_of_reader_id" prefWidth="171.0" text="TYPE OF READER  ID" />
+                                  <TableColumn fx:id="Rd_type_of_reader_name" prefWidth="228.0" text="TYPE OF READER NAME" />
+                                </columns>
+                              </TableView>
+                              <HBox prefHeight="22.0" prefWidth="400.0">
+                                 <children>
+                                    <JFXButton fx:id="rd_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/TICK.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="rd_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/X.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="rd_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/editT.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="rd_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/clear.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane layoutX="680.0" layoutY="-1.0" prefHeight="101.0" prefWidth="399.0">
+                           <children>
+                              <Label layoutX="37.0" layoutY="22.0" text="TYPE OF READER  ID" />
+                              <Label layoutX="37.0" layoutY="62.0" prefHeight="17.0" prefWidth="144.0" text="TYPE OF READER NAME" />
+                              <TextField fx:id="rd_type_of_reader_id" layoutX="176.0" layoutY="18.0" prefHeight="25.0" prefWidth="209.0" />
+                              <TextField fx:id="rd_type_of_reader_name" layoutX="176.0" layoutY="58.0" prefHeight="25.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="664.0">
+                     <children>
+                        <HBox layoutY="101.0" prefHeight="306.0" prefWidth="681.0">
+                           <children>
+                              <TableView prefHeight="327.0" prefWidth="671.0">
+                                 <columns>
+                                    <TableColumn fx:id="B_rule_id" prefWidth="94.0" text="RULE ID " />
+                                    <TableColumn fx:id="B_expiry_date_of_book" prefWidth="212.0" text="EXPIRY DATE OF BOOK" />
+                                    <TableColumn fx:id="B_start_date" prefWidth="206.0" text="START DATE" />
+                                    <TableColumn fx:id="B_end_date" prefWidth="158.0" text="END DATE" />
+                                 </columns>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label layoutX="21.0" layoutY="38.0" prefHeight="23.0" prefWidth="75.0" text="RULE ID " />
+                        <Label layoutX="345.0" layoutY="41.0" prefHeight="17.0" prefWidth="131.0" text="EXPIRY DATE OF BOOK" />
+                        <TextField fx:id="b_rule_id" layoutX="120.0" layoutY="37.0" prefHeight="25.0" prefWidth="181.0" />
+                        <TextField fx:id="b_expiry_date_of_book" layoutX="476.0" layoutY="37.0" prefHeight="25.0" prefWidth="171.0" />
+                        <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
+                           <children>
+                              <JFXButton fx:id="b_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/add_regolution.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="b_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="b_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="b_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/clear.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="711.0" layoutY="102.0" prefHeight="305.0" prefWidth="369.0">
+                           <children>
+                              <TableView prefHeight="232.0" prefWidth="376.0">
+                                 <columns>
+                                    <TableColumn fx:id="B_type_of_book_id" prefWidth="180.0" text="TYPE OF BOOK ID" />
+                                    <TableColumn fx:id="B_type_of_book_name" prefWidth="219.0" text="TYPE OF BOOK NAME" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefHeight="22.0" prefWidth="400.0">
+                                 <children>
+                                    <JFXButton fx:id="b_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/TICK.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="b_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/X.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="b_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/editT.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="b_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CLEAR">
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/clear.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane layoutX="680.0" layoutY="-1.0" prefHeight="101.0" prefWidth="399.0">
+                           <children>
+                              <Label layoutX="35.0" layoutY="22.0" text="TYPE OF BOOK ID" />
+                              <Label layoutX="35.0" layoutY="62.0" prefHeight="17.0" prefWidth="144.0" text="TYPE OF BOOK NAME" />
+                              <TextField fx:id="b_type_of_book_id" layoutX="176.0" layoutY="18.0" prefHeight="25.0" prefWidth="209.0" />
+                              <TextField fx:id="b_type_of_book_name" layoutX="175.0" layoutY="58.0" prefHeight="25.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="647.0" layoutY="41.0" text="(months)" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="EMPLOYEE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="664.0">
+                     <children>
+                        <HBox layoutY="101.0" prefHeight="306.0" prefWidth="681.0">
+                           <children>
+                              <TableView prefHeight="327.0" prefWidth="671.0">
+                                 <columns>
+                                    <TableColumn fx:id="E_stt" prefWidth="94.0" text="STT" />
+                                    <TableColumn fx:id="E_rule_id" prefWidth="107.0" text="RULE ID " />
+                                    <TableColumn fx:id="E_minimum_age" prefWidth="125.0" text="MINIMUM AGE" />
+                                    <TableColumn fx:id="E_maximum_age" prefWidth="127.0" text="MAXIMUM AGE" />
+                                    <TableColumn fx:id="E_start_date" prefWidth="112.0" text="START DATE" />
+                                    <TableColumn fx:id="E_end_date" prefWidth="116.0" text="END DATE" />
+                                 </columns>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label layoutX="21.0" layoutY="14.0" prefHeight="23.0" prefWidth="75.0" text="RULE ID " />
+                        <Label layoutX="378.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="MINIMUM AGE" />
+                        <Label layoutX="21.0" layoutY="65.0" prefHeight="17.0" prefWidth="105.0" text="MAXIMUM AGE" />
+                        <TextField fx:id="e_rule_id" layoutX="126.0" layoutY="13.0" prefHeight="25.0" prefWidth="193.0" />
+                        <TextField fx:id="e_minimum_age" layoutX="474.0" layoutY="13.0" prefHeight="25.0" prefWidth="196.0" />
+                        <TextField fx:id="e_maximum_age" layoutX="124.0" layoutY="61.0" prefHeight="25.0" prefWidth="197.0" />
+                        <HBox layoutX="11.0" layoutY="407.0" prefHeight="39.0" prefWidth="671.0">
+                           <children>
+                              <JFXButton fx:id="e_add_button" contentDisplay="TOP" prefHeight="40.0" prefWidth="200.0" text="ADD">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/add_regolution.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="e_remove_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="REMOVE">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="e_edit_button" contentDisplay="TOP" layoutX="103.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="EDIT">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="e_clear_button" contentDisplay="TOP" layoutX="196.0" layoutY="10.0" prefHeight="55.0" prefWidth="200.0" text="CLEAR">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/clear.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="712.0" layoutY="102.0" prefHeight="305.0" prefWidth="368.0">
+                           <children>
+                              <TableView prefHeight="232.0" prefWidth="400.0">
+                                 <columns>
+                                    <TableColumn fx:id="E_position_id" prefWidth="200.0" text="POSITION  ID" />
+                                    <TableColumn fx:id="E_position_name" prefWidth="199.0" text="POSITION NAME" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefHeight="22.0" prefWidth="400.0">
+                                 <children>
+                                    <JFXButton fx:id="e_save_button" contentDisplay="TOP" prefHeight="71.0" prefWidth="93.0" text="SAVE">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/TICK.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="e_exit_button" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="87.0" text="EXIT">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/X.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="e_edit_button_2" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="72.0" prefWidth="92.0" text="EDIT">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/editT.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="e_clear_button_2" contentDisplay="TOP" layoutX="220.0" layoutY="10.0" prefHeight="71.0" prefWidth="87.0" text="CEAR">
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/clear.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane layoutX="680.0" layoutY="-1.0" prefHeight="101.0" prefWidth="399.0">
+                           <children>
+                              <Label layoutX="29.0" layoutY="22.0" text="POSITION  ID" />
+                              <Label layoutX="29.0" layoutY="62.0" prefHeight="17.0" prefWidth="144.0" text="POSITION NAME" />
+                              <TextField fx:id="e_position_id" layoutX="176.0" layoutY="18.0" prefHeight="25.0" prefWidth="209.0" />
+                              <TextField fx:id="e_position_name" layoutX="175.0" layoutY="58.0" prefHeight="25.0" prefWidth="210.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
