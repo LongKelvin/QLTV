@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="460.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.fxml.BookIssue">
+<AnchorPane prefHeight="498.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.IssueBookFormController">
    <children>
-      <TableView layoutX="162.0" layoutY="-10.0" prefHeight="400.0" prefWidth="611.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="table_info" layoutX="162.0" layoutY="115.0" prefHeight="383.0" prefWidth="637.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
         <columns>
-          <TableColumn fx:id="book_id" prefWidth="75.0" text="BOOK ID" />
-          <TableColumn fx:id="book_name" prefWidth="188.0" text="BOOK NAME" />
-            <TableColumn fx:id="type_of_book" prefWidth="131.0" text="TYPE OF BOOK" />
-            <TableColumn fx:id="author" prefWidth="164.0" text="AUTHOR" />
+          <TableColumn fx:id="Book_id" prefWidth="75.0" text="BOOK ID" />
+          <TableColumn fx:id="Book_name" prefWidth="188.0" text="BOOK NAME" />
+            <TableColumn fx:id="Type_of_book" prefWidth="131.0" text="TYPE OF BOOK" />
+            <TableColumn fx:id="Author" prefWidth="164.0" text="AUTHOR" />
             <TableColumn prefWidth="78.0" text="SELECT" />
         </columns>
       </TableView>
+      <JFXButton fx:id="cancel_button" layoutX="157.0" layoutY="25.0" onAction="#Click_cancel_button" prefHeight="60.0" prefWidth="105.0" stylesheets="@../../styles/button.css" text="CANCLE" />
+      <JFXButton fx:id="save_button" layoutX="27.0" layoutY="25.0" onAction="#Click_save_button" prefHeight="60.0" prefWidth="105.0" stylesheets="@../../styles/button.css" text="SAVE" />
+      <Label layoutX="320.0" layoutY="29.0" text="READER ID" />
+      <Label layoutX="320.0" layoutY="75.0" text="READER NAME" />
+      <TextField fx:id="reader_id" layoutX="419.0" layoutY="25.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="reader_name" layoutX="419.0" layoutY="71.0" prefHeight="25.0" prefWidth="195.0" />
    </children>
 </AnchorPane>
