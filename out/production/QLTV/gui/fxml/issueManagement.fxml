@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="1611.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.IssueManagementController">
+    <children>
+        <Label layoutX="14.0" prefHeight="45.0" prefWidth="265.0" text="ISSUE INFORMATION">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="49.0" text="ISSUE ID " />
+        <Label layoutX="14.0" layoutY="84.0" text="READER ID" />
+        <Label layoutX="261.0" layoutY="49.0" text="DATE OF ISSUE" />
+        <Label layoutX="261.0" layoutY="85.0" text="DATE OF RETURN" />
+        <Label layoutX="14.0" layoutY="150.0" text="NUMBER OF ISSUED BOOKS" />
+        <TextField fx:id="issue_id" layoutX="103.0" layoutY="45.0" />
+        <TextField fx:id="reader_id" layoutX="103.0" layoutY="76.0" />
+        <TextField fx:id="number_of_issued_books" layoutX="169.0" layoutY="146.0" prefHeight="25.0" prefWidth="83.0" />
+        <HBox layoutX="620.0" layoutY="11.0" prefHeight="62.0" prefWidth="450.0">
+            <children>
+                <Button fx:id="new_issue_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Click_new_issue_button" prefHeight="77.0" prefWidth="150.0" text="NEW ISSUE">
+                    <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/list_book.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="remove_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Click_remove_button" prefHeight="77.0" prefWidth="150.0" text="REMOVE ">
+                    <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/remove_book.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="edit_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Click_edit_button" prefHeight="77.0" prefWidth="150.0" text="EDIT ">
+                    <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/edit_book.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <TextField fx:id="search_field" layoutX="620.0" layoutY="114.0" prefHeight="25.0" prefWidth="183.0" />
+        <ChoiceBox fx:id="search_by" layoutX="833.0" layoutY="110.0" prefWidth="150.0" />
+        <HBox layoutX="1344.0" layoutY="88.0" prefHeight="62.0" prefWidth="97.0" />
+        <DatePicker fx:id="date_of_issue" layoutX="377.0" layoutY="45.0" prefHeight="25.0" prefWidth="150.0" />
+        <DatePicker fx:id="date_of_return" layoutX="377.0" layoutY="81.0" prefHeight="25.0" prefWidth="150.0" />
+        <TableView layoutY="189.0" prefHeight="373.0" prefWidth="917.0">
+            <columns>
+                <TableColumn fx:id="Issue_id" prefWidth="75.0" text="ISSUE ID " />
+                <TableColumn fx:id="Reader_id" prefWidth="133.0" text="READER ID" />
+            <TableColumn fx:id="Reader_name" prefWidth="127.0" text="READER NAME" />
+                <TableColumn fx:id="Date_of_issue" prefWidth="107.0" text="DATE OF ISSUE" />
+                <TableColumn fx:id="Date_of_return" prefWidth="144.0" text="DATE OF RETURN" />
+                <TableColumn fx:id="Number_of_issued_books" prefWidth="193.0" text="NUMBER OF ISSUED BOOKS" />
+            <TableColumn prefWidth="127.0" text="DETAIL" />
+            </columns>
+        </TableView>
+      <Button fx:id="search_button" contentDisplay="TOP" layoutX="997.0" layoutY="96.0" mnemonicParsing="false" onAction="#Click_search_button" prefHeight="62.0" prefWidth="83.0" text="SEARCH">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons8-search-256.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="114.0" text="READER NAME" />
+      <TextField fx:id="reader_name" layoutX="103.0" layoutY="110.0" />
+    </children>
+</AnchorPane>
